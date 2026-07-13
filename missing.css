@@ -1,0 +1,191 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    padding: 80px 24px;
+  }
+
+  .schedule-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .schedule-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 14px;
+  }
+
+  .schedule-header p {
+    font-size: 16px;
+    color: #6b7280;
+  }
+
+  .schedule-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
+  }
+
+  /* ---------- Left: Timeline ---------- */
+  .timeline {
+    position: relative;
+    padding-left: 36px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: #e5e5e5;
+  }
+
+  .timeline-item {
+    position: relative;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -36px;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #4f5df1;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 2px #4f5df1;
+  }
+
+  .timeline-time {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #4f5df1;
+    margin-bottom: 8px;
+  }
+
+  .timeline-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 6px;
+  }
+
+  .timeline-desc {
+    font-size: 16px;
+    color: #6b7280;
+    line-height: 1.55;
+  }
+
+  /* ---------- Right: Venue Showcase ---------- */
+  .venue-card {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+    background: #fafafa;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .venue-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    background: #eee;
+  }
+
+  .venue-info {
+    padding: 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .venue-tag {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #4f5df1;
+    margin-bottom: 14px;
+  }
+
+  .venue-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 16px;
+  }
+
+  .venue-desc {
+    font-size: 17px;
+    color: #6b7280;
+    line-height: 1.65;
+    margin-bottom: 22px;
+  }
+
+  .venue-features {
+    list-style: none;
+  }
+
+  .venue-features li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 17px;
+    color: #374151;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .venue-features li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4f5df1;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .schedule-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .timeline {
+      height: auto;
+      justify-content: flex-start;
+      gap: 28px;
+    }
+    .venue-card {
+      height: auto;
+    }
+    .schedule-header h2 {
+      font-size: 30px;
+    }
+    .venue-title {
+      font-size: 24px;
+    }
+    .timeline-title {
+      font-size: 19px;
+    }
+  }
